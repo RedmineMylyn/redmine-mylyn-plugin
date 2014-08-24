@@ -2,7 +2,7 @@
 <feature
       id="net.sf.redmine_mylyn.feature"
       label="%Feature-Name"
-      version="0.4.1.qualifier"
+      version="0.5.0.qualifier"
       provider-name="%Feature-Vendor"
       plugin="net.sf.redmine_mylyn">
 
@@ -19,7 +19,7 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://opensource.ljader.pl/update-site/redmine-mylyn-plugin/nightly/"/>
+      <update label="%updateSiteName" url="http://yukoff.github.io/redmine-mylyn-plugin/update/"/>
    </url>
 
    <requires>
@@ -36,13 +36,13 @@
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.equinox.log" version="1.2.0" match="greaterOrEqual"/>
       
-      <import plugin="net.sf.redmine_mylyn.common" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.redmine_mylyn.api" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.redmine_mylyn.core" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.redmine_mylyn.common" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.redmine_mylyn.api" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.redmine_mylyn.core" version="0.5.0" match="greaterOrEqual"/>
 
       <import plugin="ch.qos.logback.classic" version="0.9.19" match="greaterOrEqual"/>
       <import plugin="ch.qos.logback.core" version="0.9.19" match="greaterOrEqual"/>
-      <import plugin="org.aspectj.runtime" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.aspectj.runtime" version="1.7.0" match="greaterOrEqual"/>
       <import plugin="org.json" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.slf4j.api" version="1.5.11" match="greaterOrEqual"/>
    </requires>

@@ -10,7 +10,7 @@
 
 	<groupId>net.sf.redmine_mylyn</groupId>
 	<artifactId>net.sf.redmine_mylyn.parent</artifactId>
-	<version>0.4.1-SNAPSHOT</version>
+	<version>0.5.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<modules>
@@ -26,15 +26,15 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.23.1</tycho-version>
-		<platform-version-name>juno</platform-version-name>
+		<tycho-version>0.24.0</tycho-version>
+		<platform-version-name>mars</platform-version-name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
 		<mylyn-site>http://download.eclipse.org/mylyn/releases/latest</mylyn-site>
-		<orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20130118183705/repository/</orbit-site>
+		<orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20151221205849/repository/</orbit-site>
 		<aspectj-site>http://download.eclipse.org/tools/ajdt/43/update</aspectj-site>
 	</properties>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/ljader/redmine-mylyn-plugin.git</connection>
 		<developerConnection>scm:git:git@github.com:ljader/redmine-mylyn-plugin.git</developerConnection>
@@ -130,7 +130,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.4.1</version>
+					<version>2.7</version>
 					<configuration>
 						<encoding>ISO-8859-1</encoding>
 					</configuration>
