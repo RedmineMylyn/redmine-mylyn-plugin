@@ -26,7 +26,7 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.24.0</tycho-version>
+		<tycho-version>0.23.1</tycho-version>
 		<platform-version-name>mars</platform-version-name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
@@ -36,9 +36,9 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:git://github.com/ljader/redmine-mylyn-plugin.git</connection>
-		<developerConnection>scm:git:git@github.com:ljader/redmine-mylyn-plugin.git</developerConnection>
-		<url>https://github.com/ljader/redmine-mylyn-plugin</url>
+		<connection>scm:git:git://github.com/yukoff/redmine-mylyn-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:yukoff/redmine-mylyn-plugin.git</developerConnection>
+		<url>https://github.com/yukoff/redmine-mylyn-plugin</url>
 	</scm>
 
 	<repositories>
