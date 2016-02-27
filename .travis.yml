@@ -2,8 +2,34 @@ language: java
 jdk:
   - oraclejdk7
   - oraclejdk8
-  - openjdk7
-
 before_script:
-
 script: mvn clean verify
+before_deploy:
+  - mvn package -B
+deploy:
+  provider: releases
+  api_key:
+    secure: UglGYCALmhJE6uZqSbuSuWe1G4fYvZK5BlvBqKPGfoSZ6HzmXg3DTtRi3M8Sxh8yg940t79TG4yRlwqbO6jLTeRC10UccA0lnKt53iCfQZqw+J3DkcueIYnYTJY8FLTTuOUEwViEdqYbHjHm/W8zcKqXD0R1jQJwFg2YKzLWlCw=
+  file: 'net.sf.redmine_mylyn.p2repository/target/net.sf.redmine_mylyn.p2repository-*-SNAPSHOT.zip'
+  skip_cleanup: true
+  on:
+    repo: yukoff/redmine-mylyn-plugin
+    branch: binary-releases
+    jdk: oraclejdk7
+after_success:
+  - ls -la
+  - git config user.email "travis@travis-ci.org"
+  - git config user.name "Travis CI"
+  - git remote set-url --push origin https://github.com/yukoff/redmine-mylyn-plugin.git
+  - git fetch origin gh-pages
+  - git branch -ar
+  - git checkout -b gh-pages origin/gh-pages
+  - git checkout -b gh-pages-update-site gh-pages
+  - rm -rf update/*
+  - cp -r net.sf.redmine_mylyn.p2repository/target/repository/* update/
+  - git add --all update
+  - git commit -m 'Update Eclipse Update Site content'
+  - git checkout gh-pages
+  - git merge --no-ff gh-pages-update-site
+  - git branch -D gh-pages-update-site
+  - git push origin gh-pages
