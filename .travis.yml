@@ -15,18 +15,19 @@ deploy:
   on:
     repo: yukoff/redmine-mylyn-plugin
     branch: deploy-gh-releases
-    jdk: oraclejdk7
+    jdk: oraclejdk8
 after_success:
   - ls -la
   - export
   - git config user.email "travis@travis-ci.org"
   - git config user.name "Travis CI"
-  - git remote set-url --push origin https://${GH_TOKEN}@github.com/yukoff/redmine-mylyn-plugin.git
+  - git remote set-url --push origin https://$TRAVIS_GH_PAGES_ACCESS_TOKEN@github.com/yukoff/redmine-mylyn-plugin.git
   - git fetch origin gh-pages
   - git branch -ar
   - git checkout -b gh-pages FETCH_HEAD
   - git checkout -b gh-pages-update-site gh-pages
   - rm -rf update/*
+  - git checkout HEAD -- update/index.html
   - cp -r net.sf.redmine_mylyn.p2repository/target/repository/* update/
   - git add --all -- update
   - git commit -m 'Update Eclipse Update Site content'
@@ -34,3 +35,4 @@ after_success:
   - git merge --no-ff gh-pages-update-site --no-edit
   - git branch -D gh-pages-update-site
   - git push origin gh-pages
+  - git checkout $TRAVIS_BRANCH
