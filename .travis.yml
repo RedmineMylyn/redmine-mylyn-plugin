@@ -14,16 +14,16 @@ deploy:
   skip_cleanup: true
   on:
     repo: yukoff/redmine-mylyn-plugin
-    branch: binary-releases
+    branch: deploy-gh-releases
     jdk: oraclejdk7
 after_success:
   - ls -la
   - git config user.email "travis@travis-ci.org"
   - git config user.name "Travis CI"
-  - git remote set-url --push origin https://github.com/yukoff/redmine-mylyn-plugin.git
+  - git remote set-url --push origin https://${GH_TOKEN}@github.com/yukoff/redmine-mylyn-plugin.git
   - git fetch origin gh-pages
   - git branch -ar
-  - git checkout -b gh-pages origin/gh-pages
+  - git checkout -b gh-pages FETCH_HEAD
   - git checkout -b gh-pages-update-site gh-pages
   - rm -rf update/*
   - cp -r net.sf.redmine_mylyn.p2repository/target/repository/* update/
